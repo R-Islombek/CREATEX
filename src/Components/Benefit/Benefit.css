@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+.benefit {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(56px, 8vw, 100px) 0 clamp(64px, 9vw, 110px);
+  font-family: 'Lato', sans-serif;
+  overflow-x: clip;
+}
+
+.benefit *,
+.benefit *::before,
+.benefit *::after {
+  box-sizing: border-box;
+}
+
+.benefit .container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.benefit-container {
+  width: 100%;
+}
+
+/* Yuqori sarlavha */
+.benefit-header {
+  text-align: center;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.benefit-subtitle {
+  display: block;
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e212c;
+  margin-bottom: 8px;
+}
+
+.benefit-title {
+  margin: 0;
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 900;
+  line-height: 1.3;
+  color: #1e212c;
+}
+
+/* Tablar qatori */
+.benefit-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: clamp(36px, 5vw, 60px);
+}
+
+.benefit-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #9a9ca5;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(14px, 1.15vw, 16px);
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.benefit-tab svg {
+  flex-shrink: 0;
+}
+
+.benefit-tab:hover {
+  color: #424551;
+}
+
+.benefit-tab.is-active {
+  color: #ff3f3a;
+  border-color: #ff3f3a;
+  background-color: #ffffff;
+}
+
+.benefit-tab.is-active:hover {
+  color: #ff3f3a;
+}
+
+/* Kontent va illyustratsiya */
+.benefit-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 6vw, 110px);
+  animation: benefitFadeIn 0.3s ease;
+}
+
+@keyframes benefitFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.benefit-info {
+  flex: 0 1 495px;
+  max-width: 495px;
+  min-width: 0;
+}
+
+.benefit-info__title {
+  margin: 0 0 24px;
+  font-size: clamp(24px, 2.3vw, 32px);
+  font-weight: 900;
+  line-height: 1.3;
+  color: #1e212c;
+}
+
+.benefit-info__text {
+  margin: 0;
+  font-size: clamp(14px, 1.15vw, 16px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #424551;
+}
+
+.benefit-visual {
+  flex: 1 1 560px;
+  max-width: 600px;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.benefit-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Planshetlar (<= 992px) */
+@media (max-width: 992px) {
+  .benefit-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .benefit-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+  }
+
+  .benefit-info {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .benefit-visual {
+    flex: none;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .benefit-tabs {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .benefit-tab {
+    justify-content: flex-start;
+    padding: 0 14px;
+    height: 44px;
+  }
+
+  .benefit-info__title {
+    margin-bottom: 14px;
+  }
+}
