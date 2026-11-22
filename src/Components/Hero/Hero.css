@@ -1,19 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 .main {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   background-color: #fde3d7;
-  padding: 60px 0 80px;
+  padding: 90px 0 80px;
+  z-index: 2;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
 }
 
-.container {
-  max-width: 1260px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+
 
 .main-container {
   position: relative;
@@ -33,7 +30,6 @@
   flex-shrink: 0;
 }
 
-/* Play showreel tugmasi */
 .hero-play {
   display: inline-flex;
   align-items: center;
