@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 .main {
-  /* position: relative; */
+  position: relative;
   width: 100%;
   background-color: #fde3d7;
-  padding: 90px 0 80px;
+  padding: clamp(48px, 7vw, 90px) 0 clamp(44px, 6vw, 80px);
   z-index: 2;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+}
 
 .main-container {
   position: relative;
@@ -21,15 +26,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 140px;
+  gap: clamp(28px, 4vw, 48px);
+  margin-bottom: clamp(56px, 10vw, 140px);
 }
 
 .hero-content {
+  flex: 1 1 500px;
   max-width: 500px;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
+/* Play showreel tugmasi */
 .hero-play {
   display: inline-flex;
   align-items: center;
@@ -37,7 +44,7 @@
   background: transparent;
   border: none;
   padding: 0;
-  margin-bottom: 24px;
+  margin-bottom: clamp(18px, 2.5vw, 24px);
   cursor: pointer;
 }
 
@@ -45,12 +52,13 @@
   position: relative;
   width: 52px;
   height: 52px;
+  flex-shrink: 0;
   border-radius: 50%;
   background-color: #ff3f3a;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .hero-play-circle::before {
@@ -59,7 +67,7 @@
   inset: -16px;
   border-radius: 50%;
   background-color: rgba(255, 63, 58, 0.12);
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .hero-play-circle svg {
@@ -70,10 +78,12 @@
 
 .hero-play:hover .hero-play-circle {
   transform: scale(1.06);
+  background-color: #f42e29;
 }
 
 .hero-play:hover .hero-play-circle::before {
-  transform: scale(1.1);
+  transform: scale(1.12);
+  background-color: rgba(255, 63, 58, 0.18);
 }
 
 .hero-play-text {
@@ -86,11 +96,11 @@
 
 /* Katta sarlavha */
 .hero-title {
-  margin: 0 0 60px;
-  font-size: 64px;
+  margin: 0 0 clamp(28px, 4.5vw, 60px);
+  font-size: clamp(34px, 4.8vw, 64px);
   font-weight: 900;
-  line-height: 1.3;
-  letter-spacing: 1px;
+  line-height: 1.22;
+  letter-spacing: clamp(0.4px, 0.08vw, 1px);
   color: #1e212c;
 }
 
@@ -98,7 +108,8 @@
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 24px);
 }
 
 .hero-btn-outline {
@@ -106,7 +117,7 @@
   align-items: center;
   justify-content: center;
   height: 52px;
-  padding: 0 40px;
+  padding: 0 clamp(24px, 3vw, 40px);
   border: 1px solid #ff3f3a;
   border-radius: 4px;
   background-color: transparent;
@@ -116,7 +127,7 @@
   letter-spacing: 0.5px;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .hero-btn-outline:hover {
@@ -124,12 +135,16 @@
   color: #ffffff;
 }
 
+.hero-btn-outline:active {
+  transform: translateY(1px);
+}
+
 .hero-btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 52px;
-  padding: 0 40px;
+  padding: 0 clamp(24px, 3vw, 40px);
   border-radius: 4px;
   background: linear-gradient(55.95deg, #ff3f3a 0%, #f75e05 100%);
   color: #ffffff;
@@ -142,7 +157,7 @@
 }
 
 .hero-btn-primary:hover {
-  opacity: 0.95;
+  opacity: 0.96;
   box-shadow: 0 8px 20px rgba(255, 63, 58, 0.25);
 }
 
@@ -152,8 +167,10 @@
 
 /* O'ng tomondagi rasm */
 .hero-image {
+  flex: 1 1 540px;
   max-width: 602px;
   width: 100%;
+  min-width: 0;
   display: flex;
   justify-content: flex-end;
 }
@@ -165,6 +182,7 @@
   object-fit: contain;
 }
 
+/* Statistika qatori */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -179,18 +197,17 @@
 }
 
 .hero-stat-number {
-  font-size: 46px;
+  font-size: clamp(32px, 3.4vw, 46px);
   font-weight: 900;
-  line-height: 1.3;
+  line-height: 1.25;
   color: #1e212c;
 }
 
 .hero-stat-label {
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 16px);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #1e212c;
-  white-space: nowrap;
 }
 
 .hero-stat-dot {
@@ -201,9 +218,10 @@
   flex-shrink: 0;
 }
 
+/* Orqa fondagi dekorativ shakllar */
 .hero-decor-arrows {
   position: absolute;
-  top: 45%;
+  top: 44%;
   left: 38%;
   display: flex;
   gap: 6px;
@@ -231,17 +249,18 @@
   z-index: 1;
 }
 
-/* Responsive */
+/* Noutbuk va kichik ekranlar (<= 1120px) */
 @media (max-width: 1120px) {
-  .hero-title {
-    font-size: 52px;
+  .hero-stats {
+    gap: 14px;
   }
 
-  .hero-top {
-    margin-bottom: 90px;
+  .hero-stat-item {
+    gap: 10px;
   }
 }
 
+/* Planshetlar (<= 960px) */
 @media (max-width: 960px) {
   .hero-top {
     flex-direction: column;
@@ -249,36 +268,73 @@
   }
 
   .hero-content {
-    max-width: 100%;
+    flex: none;
+    max-width: 620px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .hero-stats {
-    flex-wrap: wrap;
+  .hero-actions {
     justify-content: center;
-    gap: 28px 40px;
   }
 
-  .hero-stat-dot {
+  .hero-image {
+    flex: none;
+    max-width: 520px;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 32px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .hero-stat-item {
+    justify-content: flex-start;
+  }
+
+  .hero-stat-dot,
+  .hero-decor-arrows,
+  .hero-decor-semi {
     display: none;
   }
 }
 
+/* Mobil telefonlar (<= 540px) */
 @media (max-width: 540px) {
   .hero-title {
-    font-size: 38px;
-    margin-bottom: 36px;
+    line-height: 1.2;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
 
   .hero-btn-outline,
   .hero-btn-primary {
     width: 100%;
+    height: 48px;
+    font-size: 15px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 300px;
+  }
+
+  .hero-stat-label {
+    white-space: normal;
   }
 }
