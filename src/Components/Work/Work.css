@@ -1,0 +1,277 @@
+.main {
+  min-height: 100vh;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fde4dc 0%, #fbd6ca 55%, #f9cfc2 100%);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e212c;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-container {
+  width: 100%;
+}
+
+/* Header */
+.events-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.events-subtitle {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #1e212c;
+  margin-bottom: 8px;
+}
+
+.events-title {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1e212c;
+}
+
+/* Cards list */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 185px 1fr auto;
+  align-items: center;
+  gap: 36px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 32px 40px;
+  box-shadow: 0 12px 28px rgba(205, 110, 78, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card.is-featured,
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 42px rgba(205, 92, 52, 0.16);
+}
+
+/* Date block */
+.event-date {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.event-day {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #ff4d24;
+  min-width: 58px;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-month {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1e212c;
+}
+
+.event-time {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #787a80;
+}
+
+/* Info block */
+.event-info {
+  min-width: 0;
+}
+
+.event-heading {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #1e212c;
+}
+
+.event-category {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #787a80;
+}
+
+/* Buttons */
+.btn-outline,
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ff4d24;
+  border: 1.5px solid #ff6b4a;
+}
+
+.btn-outline:hover,
+.event-card.is-featured .btn-outline {
+  background-color: #ff4d24;
+  border-color: #ff4d24;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(255, 77, 36, 0.28);
+}
+
+.btn-primary {
+  background-color: #ff4d24;
+  color: #ffffff;
+  border: 1.5px solid #ff4d24;
+  height: 48px;
+  padding: 0 36px;
+}
+
+.btn-primary:hover {
+  background-color: #e63e17;
+  border-color: #e63e17;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.events-footer {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.events-footer-text {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1e212c;
+}
+
+/* Responsive: Laptop / Tablet */
+@media (max-width: 992px) {
+  .main {
+    padding: 64px 0;
+  }
+
+  .events-title {
+    font-size: 38px;
+  }
+
+  .event-card {
+    grid-template-columns: 165px 1fr auto;
+    gap: 24px;
+    padding: 28px 28px;
+  }
+
+  .event-day {
+    font-size: 40px;
+    min-width: 50px;
+  }
+
+  .btn-outline {
+    padding: 0 24px;
+  }
+}
+
+/* Responsive: Mobile / Telephone */
+@media (max-width: 767px) {
+  .main {
+    padding: 48px 0;
+  }
+
+  .events-header {
+    margin-bottom: 36px;
+  }
+
+  .events-title {
+    font-size: 30px;
+  }
+
+  .events-list {
+    gap: 16px;
+  }
+
+  .event-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 20px;
+  }
+
+  .event-date {
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f2f2f5;
+  }
+
+  .event-day {
+    font-size: 34px;
+    min-width: auto;
+  }
+
+  .event-month {
+    font-size: 16px;
+  }
+
+  .event-heading {
+    font-size: 16px;
+  }
+
+  .btn-outline {
+    width: 100%;
+  }
+
+  .events-footer {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .events-footer-text {
+    font-size: 22px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 320px;
+  }
+}
