@@ -5,6 +5,9 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+body{
+  font-family: sans-serif;
+}
 .container{
   max-width: 1200px;
   margin: 0 auto;
